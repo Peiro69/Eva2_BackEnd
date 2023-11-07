@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Directores</title>
+</head>
+<body>
+    <h1>hola</h1>
+
+    {%if directores %}
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Edad</th>
+                <th>Genero</th>
+                <th>Nacionalidad</th>
+                <th>Premios</th>
+                <th>Cantidad Peliculas</th>
+            </tr>
+        </thead>
+        <tbody>
+            {%for dir in directores %}
+            <tr>
+                <td scope="row">{{ dir.id }}</td>
+                <td>{{ dir.nombreD }} </td>
+                <td> {{ dir.edadD }}  </td>
+                <td> {{ dir.generoD }}  </td>
+                <td> {{ dir.nacD }}  </td>
+                <td> {{ dir.cantPelis }}  </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+        <div>no hay directores</div>
+    {% endif %}
+</body>
+</html>
