@@ -21,5 +21,7 @@ from appDirector import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('directores/', views.directorData)
+    path('', views.inicioApp),
+    path('directores/', views.directorData),
+    path('registroDirector/', views.formularioRegistroDirector)
 ]
