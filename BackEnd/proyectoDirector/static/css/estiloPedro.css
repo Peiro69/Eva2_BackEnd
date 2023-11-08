@@ -1,11 +1,15 @@
 body{
     background-color: rgb(42, 165, 97);
-    color: rgb(0, 0, 63);
+    color: white;
 }
 
 .titulos{
     text-align: center;
 }
 .subtitulos{
+    text-align: center;
+}
+
+.menu{
     text-align: center;
 }
