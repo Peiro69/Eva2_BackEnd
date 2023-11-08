@@ -2,6 +2,7 @@ from contextlib import redirect_stderr
 from django.shortcuts import render
 from appDirector.models import Director
 from . import forms
+from appDirector.forms import FormularioRegistroDirector
 from appDirector.forms import FormDirector
 
 # Create your views here.
@@ -9,8 +10,6 @@ from appDirector.forms import FormDirector
 def eliminarDirector(request, id):
     director = Director.objects.get(id = id)
     director.delete()
-
-
     directores = Director.objects.all()
     data = {'directores':directores}
     return render(request,'appDirector/appDirector.html', data)
@@ -18,8 +17,10 @@ def eliminarDirector(request, id):
 def modificarDirector(request, id):
     director = Director.objects.get(id = id)
     form = FormDirector(instance=director)
+    #form = FormularioRegistroDirector(instance = director)
     if request.method == 'POST':
         form = FormDirector(request.POST, instance=director)
+        #form = FormularioRegistroDirector(request.POST, instance =director)
         if form.is_valid():
             form.save()
         return inicioApp(request)
@@ -37,8 +38,10 @@ def directorData(request):
 
 def formularioRegistroDirector(request):
     form = FormDirector()
+    #form = FormularioRegistroDirector()
     if request.method == 'POST':
         form = FormDirector(request.POST)
+        #form = FormularioRegistroDirector(request.POST)
         if form.is_valid():
             form.save()
         return inicioApp(request)
