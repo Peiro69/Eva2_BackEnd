@@ -10,8 +10,8 @@ OPCIONES = [('Masculino','Masculino'), ('Femenino','Femenino'),('No Aplica','Pre
 class Director (models.Model):
  
     nombre = models.CharField(max_length=50)
-    edad = models.IntegerField()
+    edad = models.PositiveIntegerField(default=1)
     genero = models.CharField(max_length=20,choices=OPCIONES)
     nacionalidad = models.CharField(max_length=50)
-    premios = models.IntegerField()
-    cantidad_peliculas = models.IntegerField()
+    premios = models.PositiveIntegerField(default=0)
+    cantidad_peliculas = models.PositiveIntegerField(default=0)
