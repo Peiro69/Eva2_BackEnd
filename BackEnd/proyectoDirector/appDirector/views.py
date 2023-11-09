@@ -26,9 +26,6 @@ def modificarDirector(request, id):
     return render(request,'appDirector/formularioDirector.html',data)
 
 
-
-
-
 def directorData(request):
     directores = Director.objects.all()
     data = {'directores':directores}
