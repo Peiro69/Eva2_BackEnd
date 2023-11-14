@@ -42,3 +42,6 @@ def formularioRegistroDirector(request):
 
 def inicioApp(request):
     return render(request,'appDirector/inicio.html')
+
+def inicioProyecto(request):
+    return render(request,'appDirector/inicioProyecto.html')

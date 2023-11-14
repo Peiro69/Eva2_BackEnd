@@ -16,15 +16,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
 from appDirector import views
+from appActor.views import inicioAppActor
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.inicioApp),
+    
+    path('', views.inicioProyecto),
+    path('aplicacionDirector/', views.inicioApp),
     path('directores/', views.directorData),
     path('registroDirector/', views.formularioRegistroDirector),
     path('modificarDirector/<int:id>', views.modificarDirector),
     path('eliminarDirector/<int:id>', views.eliminarDirector),
+    
+    path('aplicacionActor/', inicioAppActor)
 
 ]
