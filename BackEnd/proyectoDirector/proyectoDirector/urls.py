@@ -16,19 +16,23 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from appDirector import views
-from appActor.views import inicioAppActor
+from appDirector import views as director
+from appActor import views as actor
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     
-    path('', views.inicioProyecto),
-    path('aplicacionDirector/', views.inicioApp),
-    path('directores/', views.directorData),
-    path('registroDirector/', views.formularioRegistroDirector),
-    path('modificarDirector/<int:id>', views.modificarDirector),
-    path('eliminarDirector/<int:id>', views.eliminarDirector),
+    path('', director.inicioProyecto),
+    path('aplicacionDirector/', director.inicioApp),
+    path('directores/', director.directorData),
+    path('registroDirector/', director.formularioRegistroDirector),
+    path('modificarDirector/<int:id>', director.modificarDirector),
+    path('eliminarDirector/<int:id>', director.eliminarDirector),
     
-    path('aplicacionActor/', inicioAppActor)
+    path('aplicacionActor/', actor.inicioAppActor),
+    path('formularioActor/',actor.formularioRegistroDirector),
+    path('listadoActores/', actor.actoresData),
+    path('modificarActor/<int:id>', actor.modificarActor)
+
 
 ]
