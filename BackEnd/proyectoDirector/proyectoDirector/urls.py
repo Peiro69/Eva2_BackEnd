@@ -18,11 +18,13 @@ from django.contrib import admin
 from django.urls import path
 from appDirector import views as director
 from appActor import views as actor
+from appPelicula import views as pelicula
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     
     path('', director.inicioProyecto),
+    
     path('aplicacionDirector/', director.inicioApp),
     path('directores/', director.directorData),
     path('registroDirector/', director.formularioRegistroDirector),
@@ -32,7 +34,13 @@ urlpatterns = [
     path('aplicacionActor/', actor.inicioAppActor),
     path('formularioActor/',actor.formularioRegistroDirector),
     path('listadoActores/', actor.actoresData),
-    path('modificarActor/<int:id>', actor.modificarActor)
+    path('modificarActor/<int:id>', actor.modificarActor),
+    #path('eliminarActor/<int:id>'),
+
+    path('aplicacionPelicula/', pelicula.inicioAppPelicula),
+    path('formularioPelicula/', pelicula.formularioRegistroPelicula),
+    path('listadoPelicula/', pelicula.peliculaData ),
+    path('modificarPelicula/<int:id>', pelicula.modificarPelicula),
 
 
 ]

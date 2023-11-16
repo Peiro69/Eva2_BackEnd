@@ -15,3 +15,6 @@ class Director (models.Model):
     nacionalidad = models.CharField(max_length=50)
     premios = models.PositiveIntegerField(default=0)
     cantidad_peliculas = models.PositiveIntegerField(default=0)
+
+    def __str__(self) -> str:
+        return f'{self.nombre}, {self.edad} años'

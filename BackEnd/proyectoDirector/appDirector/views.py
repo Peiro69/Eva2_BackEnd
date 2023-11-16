@@ -1,7 +1,5 @@
-from contextlib import redirect_stderr
 from django.shortcuts import render
 from appDirector.models import Director
-from . import forms
 from appDirector.forms import FormDirector
 
 # Create your views here.

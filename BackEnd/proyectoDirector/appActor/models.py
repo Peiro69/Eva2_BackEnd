@@ -9,3 +9,6 @@ class Actor (models.Model):
     nacionalidad = models.CharField(max_length=50)
     premios = models.PositiveIntegerField(default=0)
     anio_debut = models.PositiveIntegerField(default=0)
+
+    def __str__(self):
+        return f'{self.nombre}, {self.edad} años'
