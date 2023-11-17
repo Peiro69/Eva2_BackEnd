@@ -12,7 +12,7 @@ class Pelicula (models.Model):
     titulo = models.CharField(max_length=30)
     minutos_duracion = models.PositiveIntegerField(default=0)
     genero = models.CharField(max_length=10,choices=OPCIONES_GENERO)
-    fecha_de_estreno = models.DateField(null=False)
+    fecha_de_estreno = models.CharField(max_length=10,default='dd/mm/aaaa')
     presupuesto = models.PositiveIntegerField(default=0)
     recaudacion = models.PositiveIntegerField(default=0)
     director = models.ForeignKey(Director, on_delete=models.CASCADE)
