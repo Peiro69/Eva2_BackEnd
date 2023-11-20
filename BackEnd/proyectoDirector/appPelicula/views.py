@@ -37,3 +37,12 @@ def modificarPelicula(request, id):
     data = {'form' : form}
     return render(request, 'appPelicula/formularioPelicula.html',data)
 
+
+
+def eliminarPelicula(request, id):
+    pelicula = Pelicula.objects.get(id = id)
+    pelicula.delete()
+    peliculas = Pelicula.objects.all()
+    data = {'peliculas' : peliculas}
+    return render(request,'AppPelicula/listadoPelicula.html', data)
+

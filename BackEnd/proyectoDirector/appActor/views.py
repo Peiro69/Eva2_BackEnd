@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from appActor.forms import ActorForm
 from appActor.models import Actor
+from appPelicula.models import Pelicula
 
 
 # Create your views here.
@@ -36,3 +37,10 @@ def modificarActor(request, id):
         return actoresData(request)
     data = {'form' : form}
     return render(request, 'appActor/formularioActor.html', data)
+
+def eliminarActor(request, id):
+    actor = Actor.objects.get(id = id)
+    actor.delete()
+    actores = Actor.objects.all()
+    data = {'actores' : actores}
+    return render(request,'appActor/listadoActor.html',data)

@@ -35,12 +35,13 @@ urlpatterns = [
     path('formularioActor/',actor.formularioRegistroDirector),
     path('listadoActores/', actor.actoresData),
     path('modificarActor/<int:id>', actor.modificarActor),
-    #path('eliminarActor/<int:id>'),
+    path('eliminarActor/<int:id>', actor.eliminarActor),
 
     path('aplicacionPelicula/', pelicula.inicioAppPelicula),
     path('formularioPelicula/', pelicula.formularioRegistroPelicula),
     path('listadoPelicula/', pelicula.peliculaData ),
     path('modificarPelicula/<int:id>', pelicula.modificarPelicula),
+    path('eliminarPelicula/<int:id>', pelicula.eliminarPelicula)
 
 
 ]
